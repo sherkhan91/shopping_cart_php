@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  box-sizing: border-box;
+	/* This is a size fix of padding expanding*/
+}
+
+body {
+	color: #2D3D00;
+	font-family: 'Raleway', sans-serif;
+	background-image: url(images/bg.jpg);
+	min-width: 700px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form * {
+	font-family: 'Raleway', sans-serif;
+}
+
+header {
+	font-size: 2em;
+	/*This is why logo and company name on the left side*/
+	text-align: left;
+}
+
+header i {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+nav ul {
+	/*This is why navigation links on the right side*/
+	text-align: right;
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline;
+	
+}
+nav ul li a {
+	padding: 8px 15px;
+	margin: 8px 1px;
+	text-decoration: none;
+	background-color: #5E4600;
+	color: #ffffff;
+	font-size: 0.9em;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	font-size: 0.8em;
+	/*This is why disclaimer and social media icons on the right side*/
+	text-align: right;
+	padding: 15px;
+	color: #ffffff;
+	background-color: #5E4600;
+	clear: both;
+}
+
+footer img {
+	width: 2em;
+}
+
+#social_icon {
+	margin-top: 1em;
+}
+
+main {
+	text-align: center;
+	background: rgba(255, 255, 255, 0.6);
+	padding-bottom: 8px;
+}
+
+
+main img{
+	border: 2px solid #ffffff;
+	margin: 3px;
+}
+
+#welcome_main {
+	border-radius: 1.5em;
+}
+
+main h2 {
+	text-align: left;
+	padding: 8px;
+	color: #ffffff;
+	background-color: #5E4600;
+}
+
+main h3, p, ul {
+	text-align: left;
+	margin-left: 25px;
+}
+
+main p {
+	margin-right: 25px;
+}
+
+main a {
+	color: #9F5804;
+	background-color: #FEF0DE;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	text-decoration: none;	
+}
+
+main a:hover {
+	color: #FFFFFF;
+	background-color: #F59019;
+}
+
+#about_us_image {
+	float: right;
+	margin: 65px 20px 15px 15px;
+}
+#about_us_message {
+	text-align: left;
+}
+
+
+
+
+
+.image_a a {
+	background-color: transparent;
+}
+
+.image_a a:hover {
+	background-color: transparent;
+}
+
+.image_a img:hover {
+	border-color:#C5C3C4;
+}
+
+form {
+	text-align: left;
+	padding: 10px;
+	font-size: 0.9em;
+}
+form label {
+	display: inline-block;
+	width: 350px;
+	text-align: right;
+	padding: 5px;
+	vertical-align: top;
+}
+
+form input, textarea, select {
+	font-size: 1em;
+	margin: 5px;
+}
+
+form input[type=submit], input[type=reset]{
+	font-size: 1.5em;
+	margin-top: 15px;
+}

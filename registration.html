@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+	
+<head>
+	<meta charset="UTF-8">
+	<title>Fashionwave</title>
+
+	<link href="style_a1.css" rel="stylesheet" type="text/css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+	
+	<!-- Javascript goes here -->
+	   
+    <script language="JavaScript" type="text/JavaScript">
+		
+		function isNumeric(elem){
+			var numericExpression = /^[0-9]+$/;
+			if(elem.value.match(numericExpression)){
+				return true;
+			}
+			else{
+				return false;
+				elem.focus();
+			}
+		}
+		
+		function validateEmail(email) 
+			{
+			const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+			}
+
+		function notEmpty(elem){
+			// console.log("yes im here");
+			if (elem.value.length == 0){
+				return false;
+				// elem.focus();
+			}
+			else {
+				return true;
+			}
+		}
+
+		function valideAllfields(){
+			if (notEmpty( document.getElementById("name"))) {
+				if (notEmpty(document.getElementById("email")) && validateEmail(document.getElementById("email").value) ) {
+					if (notEmpty( document.getElementById("phone"))&& isNumeric(document.getElementById("phone"))) {
+						if (notEmpty( document.getElementById("comment"))) {
+						return true;
+			}
+			else {
+				alert("The comment field can not be empty!");
+				document.getElementById("comment").value=''
+				document.getElementById("comment").focus()
+				return false;
+			}
+		}
+				else {
+				alert("The phone field can not be empty! and it must be a number.");
+				document.getElementById("phone").value=''
+				document.getElementById("phone").focus()
+				return false;
+			}
+		}
+				else {
+				alert("The email field can not be empty! and must contain a valid email address.");
+				document.getElementById("email").value=''
+				document.getElementById("email").focus()
+				return false;
+			}
+		}
+				else {
+				alert("The name field can not be empty!");
+				document.getElementById("name").value=''
+				document.getElementById("name").focus()
+				// return false;
+			}
+		}
+
+
+    </script>
+	
+	<!-- Javascript end -->	
+	
+	
+</head>
+
+<body>
+	
+<header>
+	<i class="fab fa-connectdevelop"></i>    Fashionwave
+</header>
+	
+<nav>
+	<ul>
+	  <li><a  href="index.html" >Home</a></li>
+	  <li><a  href="about_us.html" >About Us</a></li>
+	  <li><a  href="products.html" >Products</a></li>
+	  <li><a  href="survey.html" >Survey</a></li>
+	  <li><a  href="registration.html" >Registration</a></li>
+	</ul>
+</nav>
+	
+<main>
+
+
+			<h2>Register With Us.</h2>
+			<h3>Please Register with us.</h3>
+
+			<!-- <form name = "survey" onSubmit="MM_validateForm('name','','R','email','','RisEmail','phone','','R','comment','','R');return document.MM_returnValue"> -->
+			<form name = "survey" method="POST" action="#">
+				<label><span>NAME</span></label>
+                <input name="name" type="text" id="name"><br>
+				<label><span>GENDER</span></label>
+				<input name="gender" type="radio" value="radiobutton">
+				MALE
+				<input name="gender" type="radio" value="radiobutton" checked>
+				FEMALE<br>
+				<label>E-MAIL</label>
+                <input name="email" type="text" id="email"><br>
+                <label>PHONE</label>
+                <input name="phone" type="text" id="phone"><br>
+                <label>COUNTRY</label>
+                <select name="country" id="country">
+                <option value="AU" selected>Australia</option>
+                    <option value="JP">Japan</option>
+                    <option value="CHI">China</option>
+                </select><br>
+				<label>COMMENT</label>
+                <textarea name="comment" rows ="6" cols="40" id="comment"></textarea><br>
+				<label></label>
+                    <!-- <input type="button" name="Submit" value="Submit" > -->
+					<input type = "button" value = "Submit" onClick = "valideAllfields()"/>
+                    <input type="reset" name="Reset" value="Reset">
+
+			</form>
+</main>
+
+<footer>
+	&copy; All Rights Reserved, 2019, stuID, stuName
+	<div id="social_icon">
+	<a href="http://www.facebook.com"><img alt="facebook icon" src = "images/social_media_icons/facebook.svg" /></a>
+	<a href="http://www.instagram.com"><img alt="instagram icon" src = "images/social_media_icons/instagram.svg" /></a>
+	<a href="http://www.youtube.com"><img alt="youtube icon" src = "images/social_media_icons/youtube.svg" /></a>
+	<a href="http://www.pinterest.com"><img alt="pinterest icon" src = "images/social_media_icons/pinterest.svg" /></a>
+	<a href="http://www.twitter.com"><img alt="twitter icon" src = "images/social_media_icons/twitter.svg" /></a>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

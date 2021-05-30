@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+	
+<head>
+	<meta charset="UTF-8">
+	<title>Fashionwave</title>
+
+	<link href="style_a1.css" rel="stylesheet" type="text/css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	
+	
+	
+	
+	<!-- Javascript starts here 
+
+	You can also link them externally like this.
+	<script type = "text/javascript" src = "survey.js"></script>
+
+	We prefer to keep it in same file for this simple task and easy manipulations
+	-->
+	
+	<script type="text/javascript">
+		function rating(){
+			if (valideAllNum()){
+				var num1 = document.survey.txt_num1.value;
+				var num2 = document.survey.txt_num2.value;
+				var num3 = document.survey.txt_num3.value;
+				var num4 = document.survey.txt_num4.value;
+				var num5 = document.survey.txt_num5.value;
+
+				var result = (parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4) + parseInt(num5))/5;
+
+				if ( result >= 1 && result < 2 ){
+					alert ("You rated us " + result + " - Thank you for letting us know that we  NEED IMPROVEMENTS");
+				}
+				else if ( result >= 2 && result < 3 ){
+					alert ("Thank you for rating us "+ result +" - Satisfactory"); 
+				}
+				else if ( result >= 3 && result < 4 ){
+					alert ("Thank you for rating us "+ result +" - Good");
+				}
+				else if ( result >= 4 && result < 5 ){
+					alert ("Thank you for rating us "+ result +" - Very Good");
+				}
+				// -- this case is actually when result equals to 5
+				else { 
+					alert ("Thank you for rating us "+ result +" - Excellent");
+				}
+			}
+		}	
+
+		function valideAllNum(){
+			if (validNum( document.getElementById("txt_num1"))) {
+				if (validNum( document.getElementById("txt_num2"))) {
+					if (validNum( document.getElementById("txt_num3"))) {
+						if (validNum( document.getElementById("txt_num4"))) {
+							if (validNum( document.getElementById("txt_num5"))) {
+					return true;
+				}
+				else {
+					alert("Please input a number between 1 and 5 for Quality of Products");
+					
+					document.getElementById("txt_num5").focus()
+					document.getElementById("txt_num4").value=''
+					return false;
+				}
+			}
+			else {
+				alert("Please input a number between 1 and 5 for Customer Service");
+				document.getElementById("txt_num4").value=''
+				document.getElementById("txt_num4").focus()
+				return false;
+			}
+		}
+				else {
+				alert("Please input a number between 1 and 5 for Eco Friendliness");
+				document.getElementById("txt_num3").value=''
+				document.getElementById("txt_num3").focus()
+				return false;
+			}
+		}
+				else {
+				alert("Please input a number between 1 and 5 for Style and Design");
+				document.getElementById("txt_num2").value=''
+				document.getElementById("txt_num2").focus()
+				return false;
+			}
+		}
+				else {
+				alert("Please input a number between 1 and 5 for Durablity");
+				document.getElementById("txt_num1").value=''
+				document.getElementById("txt_num1").focus()
+				// return false;
+			}
+		}
+
+		function validNum(elem) {
+			if( isNumeric(elem) && notEmpty(elem) && inRange(elem) ){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+
+		function isNumeric(elem){
+			var numericExpression = /^[0-9]+$/;
+			if(elem.value.match(numericExpression)){
+				return true;
+			}
+			else{
+				return false;
+				elem.focus();
+			}
+		}
+
+		function notEmpty(elem){
+			if (elem.value.length == 0){
+				return false;
+				elem.focus();
+			}
+			else {
+				return true;
+			}
+		}
+
+		function inRange(elem) {
+			if (parseInt(elem.value) <= 5 && parseInt(elem.value) >= 1 ){
+				return true;
+			}
+			else {
+				return false;
+				elem.focus();
+			}
+		}
+
+	</script>
+	
+	
+	
+	
+
+</head>
+
+<body>
+	
+<header>
+	<i class="fab fa-connectdevelop"></i>    Fashionwave
+</header>
+	
+<nav>
+	<ul>
+	  <li><a  href="index.html" >Home</a></li>
+	  <li><a  href="about_us.html" >About Us</a></li>
+	  <li><a  href="products.html" >Products</a></li>
+	  <li><a  href="survey.html" >Survey</a></li>
+	  <li><a  href="registration.html" >Registration</a></li>
+	</ul>
+</nav>
+	
+<main>
+
+	
+
+			<h2>Evaluate Our Service</h2>
+			<h3>Please evaluate our service, by given a number 1~5 </h3>
+
+			<form name = "survey">
+				
+
+				
+						<ol>
+								<li class="style1">means  Needs Improvement</li>
+								<li class="style1">means  Satisfactory</li>
+								<li class="style1">means  Good</li>
+								<li class="style1">means  Very Good</li>
+								<li class="style1">means  Excellent</li>
+						</ol>
+				
+				
+						<label>Durability</label>
+						
+							<input type = "text" name = "txt_num1" id = "txt_num1" /><br>
+						
+						<label>Style/Design</label>
+				
+							<input type = "text" name = "txt_num2" id = "txt_num2" /><br>
+						<label>Eco Friendliness</label>
+				
+							<input type = "text" name = "txt_num3" id = "txt_num3" /><br>
+						<label>Customer Service</label>
+				
+							<input type = "text" name = "txt_num4" id = "txt_num4" /><br>
+				
+						<label>Quality of Product</label>
+							<input type = "text" name = "txt_num5" id = "txt_num5" /><br>
+				
+						<label></label>
+							<!-- <input type = "Submit" value = "Submit" onClick = "rating()"/> -->
+							<input type = "button" value = "Submit" onClick = "rating()"/>
+							<input type = "Reset" value = "Clear" />
+						
+			</form>
+	
+
+</main>
+
+<footer>
+	&copy; All Rights Reserved, 2019, stuID, stuName
+	<div id="social_icon">
+	<a href="http://www.facebook.com"><img alt="facebook icon" src = "images/social_media_icons/facebook.svg" /></a>
+	<a href="http://www.instagram.com"><img alt="instagram icon" src = "images/social_media_icons/instagram.svg" /></a>
+	<a href="http://www.youtube.com"><img alt="youtube icon" src = "images/social_media_icons/youtube.svg" /></a>
+	<a href="http://www.pinterest.com"><img alt="pinterest icon" src = "images/social_media_icons/pinterest.svg" /></a>
+	<a href="http://www.twitter.com"><img alt="twitter icon" src = "images/social_media_icons/twitter.svg" /></a>
+	</div>
+</footer>
+
+
+
+
+</body>
+</html>
